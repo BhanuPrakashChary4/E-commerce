@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ 
+
+.headers {
+    background-color: #333;
+    padding: 10px;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.flash-messages {
+    margin: 10px;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.success {
+    background-color: #a5d6a7;
+    color: #388e3c;
+}
+
+.error {
+    background-color: #ef9a9a;
+    color: #c62828;
+}

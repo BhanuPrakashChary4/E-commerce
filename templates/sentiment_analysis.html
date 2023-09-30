@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block content %}
+<main class="l-main">
+  <section class="home bd-grid" id="home">
+    <div class="contact__container bd-grid container col-7">
+      <div class="container">
+        <h2 class="section-title">Admin Panel</h2>
+      </div>
+      <h3 >Sentiment Analysis</h3>
+      
+      <form action="{{ url_for('sentiment_analysis') }}" method="POST">
+
+  
+        <div class="mb-3">
+
+          <label for="text"></label><br />
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="text" name="text" rows="4" cols="50" style="height: 100px"></textarea>
+            <br>
+          </div>
+          <!-- <textarea id="text" name="text" rows="4" cols="50"></textarea><br /> -->
+          <input class="btn btn-primary"  type="submit" value="Analyze" />
+        </div>
+      </form>
+
+      {% if result %}
+      <div id="result">
+        <h5>Analysis Result</h5>
+        <p><strong>Positivity:</strong> {{ result['pos'] }}</p>
+        <p><strong>Negativity:</strong> {{ result['neg'] }}</p>
+        <p><strong>Neutrality:</strong> {{ result['neu'] }}</p>
+        <p>
+          <strong>Compound Sentiment Intensity:</strong> {{ result['compound']
+          }}
+        </p>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+</main>
+
+{% endblock %}

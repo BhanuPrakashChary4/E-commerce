@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Admin Page</h1>
+    <h2>Product Ratings</h2>
+    {% if products %}
+        <ul class="list-group">
+            {% for product in products %}
+            <li class="list-group-item">{{ product[1] }} - {{ ratings[product[0]] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No products rating available.</p>
+    {% endif %}
+{% endblock %}

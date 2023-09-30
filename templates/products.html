@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<main class="l-main" >
+    <section class="class="home bd-grid col-6" id="home"">
+        <h2>Products</h2>
+<div class="container">
+<div class="row">
+    <ul class="list-group="list-style-type: none;">
+        {% for product in products %}
+        <div class="col">
+                <li class="list-group-item" style="background-color: rgb(35, 35, 41);">
+                    <h3>{{ product.name }}</h3>
+                    <p>Price: ${{ product.price }}</p>
+                    <a href="{{ url_for('product_details', product_id=product.id) }}">View Details</a>
+                </li>
+            </div>
+            {% endfor %}
+        </ul>
+  </div>
+</div> 
+
+    </section>
+
+
+</main>
+
+
+    
+
+{% endblock %}

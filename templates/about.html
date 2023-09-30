@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="l-main">
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <!--===== HOME =====-->
+    <section class="home bd-grid" id="home">
+        <div class="home__data">
+            <h2 class="home__title"><b>major project<br> <span class="home__title-color">Performance analysis on machine learning models for Text classification</span><br> </b></h2>
+
+        </div>
+
+    <!--===== ABOUT =====-->
+    <section class="about section " id="about">
+        <h2 class="section-title"><b>About Our Project</b></h2>
+
+        <div class="about__container bd-grid">
+            <div class="about__img">
+            
+                <img src="static/Images/img/sitting-1.svg" alt="">
+              
+            </div>
+            
+            <div>
+
+                <p class="about__text">Our project is to analyze different Machine Learning Models for text classification, which evaluates the given models for the textual classification based on the performance evaluation factors like training accuracy, Validation accuracy, Confusion Matrix of the models, and f1 scores of each model taken for the performance analysis. These three different steps in the performance analysis of the models, Firstly data preparation of the dataset i.e Twitter dataset for the training of the models, then creating different models for sentiment analysis, and then training the models using the common dataset for all models used for the performance analysis. then the next step is to evaluate the models based on the performance factors of each model.
+                </p>           
+            </div>                                   
+        </div>
+    </section>
+
+    <!--===== SKILLS =====-->
+    <section class="skills section" id="skills">
+        <h2 class="section-title"><b>Models Used</b></h2>
+
+        <div class="skills__container bd-grid">          
+            <div>
+                <h2 class="skills__subtitle">Following models are used in Our Project</h2>
+                <p class="skills__text">   
+                    <b>Logistic Regression:</b> <br>
+                    Logistic regression is a popular linear classification model.
+                    It models the relationship between the independent variables (features) and the dependent variable (sentiment) using a logistic function.
+                    It is computationally efficient and interpretable.
+                    Logistic regression can handle both binary and multiclass sentiment classification tasks.
+            <br>
+            <br>
+                <b>Random Forest:</b>
+                    Random forest is an ensemble learning method that combines multiple decision trees.
+                    It creates a forest of decision trees and aggregates their predictions to make the final sentiment classification.
+                    Random forest can handle both binary and multiclass sentiment classification tasks.
+                    It is robust to overfitting and can handle high-dimensional feature spaces.
+            <br><br>
+                <b>Decision Tree Classifier:</b><br>
+                    Decision tree classifier is a simple yet powerful machine learning model.
+                    It uses a tree-like model of decisions and their possible consequences.
+                    Each internal node represents a feature, each branch represents a decision rule, and each leaf node represents a sentiment class.
+                    Decision trees can handle both binary and multiclass sentiment classification tasks.
+                    They are interpretable and can capture complex interactions between features.
+            <br><br>
+                <b>Support Vector Machine (SVM) Classifiers:</b> <br>
+                    SVM classifiers are powerful models for binary sentiment classification tasks.
+                    They create a hyperplane that maximally separates positive and negative sentiment samples in a high-dimensional feature space.
+                    SVM classifiers can handle linearly separable as well as non-linearly separable sentiment classification problems using kernel functions.
+                    They are effective in handling high-dimensional feature spaces and have good generalization performance.</p>
+            </div>
+            
+            <div>              
+                <img src="assets/img/work3.jpg" alt="" class="skills__img">
+            </div>
+        </div>
+    </section>
+
+    <!--===== WORK =====-->
+    <section class="work section" id="work">
+        <h2 class="section-title">Sentiment analysis</h2>
+        <div class=" bd-grid"> 
+            <div>
+                <p>Sentiment analysis, also known as opinion mining, is the process of computationally analyzing and extracting subjective information, such as opinions, sentiments, attitudes, emotions, and evaluations, from text data. It involves using natural language processing (NLP) techniques, machine learning algorithms, and statistical methods to determine the sentiment expressed in a piece of text.</p>
+<br>
+<p>The objective of sentiment analysis is to classify the sentiment of a given text as positive, negative, or neutral. It helps in understanding the overall sentiment or attitude of individuals or groups towards a particular entity, such as a product, service, brand, event, or topic. Sentiment analysis can be applied to various types of text data, including customer reviews, social media posts, survey responses, news articles, and online discussions.</p>
+<br>
+<p>The process of sentiment analysis typically involves the following steps:</p>
+
+<ol>
+  <li>Text Preprocessing: Clean the text by removing noise, special characters, punctuation, and stopwords. Perform tokenization to break the text into individual words or tokens. Apply techniques like stemming or lemmatization to normalize words.</li>
+  
+  <li>Feature Extraction: Transform the preprocessed text into numerical features that machine learning models can understand. Common techniques include bag-of-words, word embeddings (such as Word2Vec or GloVe), or more advanced methods like TF-IDF (Term Frequency-Inverse Document Frequency).</li>
+  
+  <li>Model Training: Utilize machine learning algorithms to train a sentiment analysis model. This involves feeding the labeled dataset, where each text is associated with its sentiment label, into the model. The model learns the patterns and relationships between the text features and their corresponding sentiments.</li>
+  
+  <li>Sentiment Classification: Apply the trained model to classify the sentiment of new, unseen text data. The model assigns a sentiment label (positive, negative, or neutral) based on the learned patterns and features extracted from the text.</li>
+  
+  <li>Evaluation: Assess the performance of the sentiment analysis model by comparing its predictions with the ground truth labels from a test dataset. Common evaluation metrics include accuracy, precision, recall, F1 score, and confusion matrix.</li>
+</ol>
+
+<p>Sentiment analysis has numerous applications in various industries. It helps businesses understand customer opinions and feedback, assess brand reputation, analyze market trends, and make data-driven decisions. It is also used in social media monitoring, customer service management, product review analysis, political analysis, and sentiment-based recommendation systems.</p>
+
+<p>However, sentiment analysis is a challenging task due to the complexity of human language, sarcasm, ambiguity, and cultural nuances. The accuracy of sentiment analysis models heavily relies on the quality and diversity of the training data, as well as the choice of appropriate features and machine learning algorithms. Ongoing research focuses on improving the performance of sentiment analysis models, incorporating domain-specific knowledge, and handling more complex sentiment analysis tasks, such as aspect-based sentiment analysis and emotion detection.</p>
+
+            </div>
+
+
+        </div>
+        
+    </section>
+
+    </section>
+</main>
+
+{% endblock %}

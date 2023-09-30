@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/static/css/styles.css" />
+<main class="l-main">
+    <section class="home bd-grid col-6" id="home">
+        <div>
+            <h3 class="subtext">{{ product[1] }}</h3>
+            <h5 class="subtext">Price: ${{ product[2] }}</h5>
+
+        </div>
+
+       
+
+        
+        <div class="contact__container bd-grid container rounded float-end ">
+            <h3 class="subtext" style="text-align: center;">Product Reviews</h3>
+
+            {% if reviews %}
+            <ul class="list-group ">
+                {% for review in reviews %}
+                <li class="list-group-item ">
+                    <strong>Product: </strong>{{ review[0] }}<br>
+                    <strong>User: </strong>{{ review[1] }}<br>
+                    <strong>Review: </strong>{{ review[2] }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No reviews available.</p>
+            {% endif %}
+        </div>
+
+
+        <!-- <h3 class="section-title" >Product Reviews</h3>
+            {% if reviews %}
+            <ul>
+                {% for review in reviews %}
+                <li>
+                    <strong>User: </strong>{{ review[0] }}<br>
+                    <strong>Review: </strong>{{ review[1] }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No reviews available.</p>
+            {% endif %} -->
+        <div class="contact__container bd-grid">
+            {% if 'user_id' in session %}
+            <h3 class="section-title">Write a Review</h3>
+            <form method="post" class="contact__form">
+                <div >
+                    <textarea class="contact__input" name="review" placeholder="Write your review" required></textarea>
+                    <br>
+                    <button class="contact__button button" type="submit">Submit Review</button>
+                </div>
+
+            </form>
+            {% else %}
+            <p>You must be logged in to submit a review. <a href="{{ url_for('login') }}">Login</a></p>
+            {% endif %}
+        </div>
+
+
+
+
+    </section>
+</main>
+
+
+{% endblock %}

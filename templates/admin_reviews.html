@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<main class="l-main">
+
+    <section class="home bd-grid  col-6" id="home">
+
+        <div class="container">
+
+            <h3 class="section-title">Analyze Reviews</h3>
+            <form method="post">
+                <div class="container">
+                    <select class="form-control form-select form-select-lg mb-3" aria-label="Default select example" name="product_id" required>
+                        {% for product in products %}
+                        <option value="{{ product[0] }}">{{ product[1] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <br>
+                <div class="container">
+    
+    
+                    <button class="btn btn-primary" type="submit" name="action" value="analyze_reviews">Analyze
+                        Reviews</button>
+                </div>
+            </form>
+        </div>
+
+
+    </section>
+
+    <section class="home bd-grid col-6" id="home">
+
+        <div class="container">
+
+            <h3 class="section-title">Product List</h3>
+    
+            <div class="form-group">
+    
+    
+                {% if products %}
+                <ul class="list-group" style="list-style-type: none;">
+                    {% for product in products %}
+                    <li class="list-group-item">
+                        <h4>{{ product[1] }}</h4>
+                        <p>Price: ${{ product[2] }}</p>
+                        <p>
+                            {% if product[3] is defined %}
+                            Average Rating: {{ product[3] }}
+                            {% else %}
+                            Average Rating: Not available
+                            {% endif %}
+                        </p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No products available.</p>
+                {% endif %}
+            </div>
+        </div>
+
+    </section>
+</main>
+
+{% endblock %}

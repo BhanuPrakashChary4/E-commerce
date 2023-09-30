@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<main class="l-main">
+    <section class="home bd-grid col-6" id="home">
+
+
+        <div class="container">
+
+            <div class="container,form-group">
+
+                <h5 class="section-title">Add Product</h5>
+                <div class="container">
+
+                    <form method="post">
+                        <div class="mb-3 form-group">
+                            <input class="form-control" type="text" name="name" placeholder="Product Name" required>
+                            <br>
+                            <input class="form-control" type="number" name="price" placeholder="Product Price" required>
+                            <br>
+                            <button class="btn btn-primary" type="submit" name="action" value="add_product">Add
+                                Product</button>
+                        </div>
+                    </form>
+                </div>
+                <hr>
+            </div>
+
+            <div class="container, form-group">
+
+                <h5 class="section-title">Remove Product</h5>
+
+                <div class="container">
+                    <form method="post">
+                        <div class="mb-3 form-group">
+                            <select class="form-control form-select form-select-lg mb-3" aria-label="Default select example" name="product_id" required >
+                                {% for product in products %}
+                                <option value="{{ product[0] }}">{{ product[1] }}</option>
+                                {% endfor %}
+                              </select>
+                            <br>
+                            <button class="btn btn-primary" type="submit" name="action" value="remove_product">Remove Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <h3 class="section-title  text-center">Product List</h3>
+
+
+        <div class="container,form-group">
+            {% if products %}
+            <ul class="list-group" style="list-style-type: none;">
+                {% for product in products %}
+                <li class="list-group-item">
+                    <h5>{{ product[1] }}</h5>
+                    <p>Price: ${{ product[2] }}</p>
+                </li>
+
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No products available.</p>
+            {% endif %}
+        </div>
+
+
+
+    </section>
+</main>
+{% endblock %}

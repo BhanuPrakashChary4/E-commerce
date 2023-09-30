@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<main class="l-main">
+
+    <section class="skills section" id="skills">
+        <h2 class="section-title">Products</h2>
+        <div class="contact__container bd-grid">
+            <div class="container col-6">
+                <ul class="list-group" style="list-style-type: none;">
+                    {% for product in products %}
+                    <li class="list-group-item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-5 col-md-6">
+                                    <img src="static/Images/img/sitting-1.svg" class="rounded float-start"
+                                        style="width: 50%;" alt="...">
+                                </div>
+                                <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                                    <div class="rounded float-end">
+                                        <h5>{{ product[1] }}</h5>
+                                        <p>Price: ${{ product[2] }}</p>
+                                        <a style="background-color: rgb(238, 241, 241);"
+                                            href="{{ url_for('product_details', product_id=product[0]) }}">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <hr>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+{% endblock %}
